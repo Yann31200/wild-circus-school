@@ -1,0 +1,54 @@
+.formation-page {
+  display: grid;
+  grid-template-columns: 20px 1fr 1fr 20px;
+  grid-template-rows: 5em 10em 20px 10em 20px 10em 20px 10em 20px 10em 20px 10em 20px 10em 20px 10em 20px;
+  background-color: rgb(182, 171, 171);
+  align-content: center;
+  justify-content: center;
+}
+
+.formation-page-title {
+  grid-area: 1 / 2 / 1 / 2;
+  text-align-last: right;
+}
+
+.formations-présentations {
+  padding: 1em;
+  grid-area: 2 / 2 / 2 / 2;
+}
+
+.theatre {
+  grid-area: 4 / 2 / 4 / 2;
+}
+
+.acrobatie {
+  grid-area: 4 / 3 / 4 / 3;
+}
+
+.jonglage {
+  grid-area: 6 / 2 / 6 / 2;
+}
+
+.dressage {
+  grid-area: 6 / 3 / 6 / 3;
+}
+
+.voltige {
+  grid-area: 8 / 2 / 8 / 2;
+}
+
+.pyrotechnie {
+  grid-area: 8 / 3 / 8 / 3;
+}
+
+.prestidigitation {
+  grid-area: 10 / 2 / 10 / 2;
+}
+
+.danse {
+  grid-area: 10 / 3 / 10 / 3;
+}
+
+.spé {
+  padding: 1em;
+}
