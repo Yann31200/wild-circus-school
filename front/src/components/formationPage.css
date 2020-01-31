@@ -1,7 +1,7 @@
 .formation-page {
   display: grid;
   grid-template-columns: 20px 1fr 1fr 20px;
-  grid-template-rows: 5em 10em 20px 10em 20px 10em 20px 10em 20px 10em 20px 10em 20px 10em 20px 10em 20px;
+  grid-template-rows: 5em 16em 20px 16em 20px 16em 20px 16em 20px 16em 20px 16em 20px 16em 20px 16em 20px;
   background-color: rgb(182, 171, 171);
   align-content: center;
   justify-content: center;
@@ -17,38 +17,78 @@
   grid-area: 2 / 2 / 2 / 2;
 }
 
+.div-inscription-button {
+  grid-area: 2 / 3 / 2 / 3;
+  display: grid;
+  align-self: center;
+  justify-items: center;
+}
+
+.button {
+  width: 10em;
+  height: 4em;
+}
+
 .theatre {
-  grid-area: 4 / 2 / 4 / 2;
+  display: grid;
+  grid-area: 4 / 2 / 4 / 2 !important;
 }
 
 .acrobatie {
-  grid-area: 4 / 3 / 4 / 3;
+  display: grid;
+  grid-area: 4 / 3 / 4 / 3 !important;
 }
 
 .jonglage {
-  grid-area: 6 / 2 / 6 / 2;
+  display: grid;
+  grid-area: 6 / 2 / 6 / 2 !important;
 }
 
 .dressage {
-  grid-area: 6 / 3 / 6 / 3;
+  display: grid;
+  grid-area: 6 / 3 / 6 / 3 !important;
 }
 
 .voltige {
-  grid-area: 8 / 2 / 8 / 2;
+  display: grid;
+  grid-area: 8 / 2 / 8 / 2 !important;
 }
 
 .pyrotechnie {
-  grid-area: 8 / 3 / 8 / 3;
+  display: grid;
+  grid-area: 8 / 3 / 8 / 3 !important;
 }
 
 .prestidigitation {
-  grid-area: 10 / 2 / 10 / 2;
+  display: grid;
+  grid-area: 10 / 2 / 10 / 2 !important;
 }
 
 .danse {
-  grid-area: 10 / 3 / 10 / 3;
+  display: grid;
+  grid-area: 10 / 3 / 10 / 3 !important;
 }
 
-.spé {
+.global-card {
   padding: 1em;
+  grid-area: 4 / 2 / 4 / 2;
+  display: grid;
+  grid-template-columns: 5px 25% 1fr 5px;
+  grid-template-rows: 4em;
+}
+
+.img-card {
+  width: 12em;
+  grid-area: 2 / 2 / 2 / 2;
+}
+
+.title-card {
+  grid-area: 1 / 2 / 1 / 2;
+  text-align: center;
+}
+
+.descriptif-card {
+  grid-area: 2 / 3 / 2 / 3;
+  padding: 1em;
+  text-align: center;
 }
