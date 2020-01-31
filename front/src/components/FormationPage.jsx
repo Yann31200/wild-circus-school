@@ -1,5 +1,6 @@
 import React from 'react';
 import './formationPage.css';
+import theatre from './assets/theatre.jpeg';
 
 function FormationPage() {
   return (
@@ -12,8 +13,9 @@ function FormationPage() {
         <p>En étudiant dans notre école il est possible de suivre un apprentisage, selon ses affinitées. Et c'est ces spélisations que nos artiste enseigne au quotidien aupres d'eleve mélant reves et passion</p>
       </div>
       <div className="spé theatre">
+        <h4>Théatre</h4>
         <p>oidnlkxnlknxlZNQKLNXLKQNXQLKXho^rĝgjrîgjeîjgôirrrrjgoierhgoeijgioeh^rĝgjrîgjeîjgôirrrrjgoierhgizh</p>
-        <img></img>
+        <img>{theatre}</img>
       </div>
       <div className="spé acrobatie">
         <p>dn,qNKUODfrchir chrio hiuhroshj chiroh r_y_ r^rĝgjrîgjeîjgôirrrrjgoierhgoeijgioehjrijggQDHIHOjpld</p>
