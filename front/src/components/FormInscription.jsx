@@ -8,42 +8,30 @@ class FormInscription extends Component {
       firstname: '',
       lastname: '',
       phone: '',
-      email: '',
+      mail: '',
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleChange(e) {
-    this.setState({
-      [e.target.name]: e.target.value
-    });
+  handleChange({ target }) {
+    const { name, value } = target;
+    this.setState({ [name]: value });
   }
 
   handleSubmit(e) {
+    const { firstname, lastname, phone, mail } = this.state;
     e.preventDefault();
-    const {
+    axios.post('http://localhost:4000/wcs/student', {
       firstname,
       lastname,
       phone,
-      email
-    } = this.state;
-
-    axios.post('/wcs/student', {
-      firstname,
-      lastname,
-      phone,
-      mail: email,
-    });
+      mail
+    })
   }
 
   render() {
-    const {
-      firstname,
-      lastname,
-      phone,
-      email
-    } = this.state;
+
     return (
       <div>
         <form onSubmit={this.handleSubmit} className="form-style">
@@ -54,7 +42,7 @@ class FormInscription extends Component {
                 type="text"
                 id="lastname"
                 name="lastname"
-                value={lastname}
+                // value={lastname}
                 onChange={this.handleChange}
                 placeholder=" Nom"
                 required
@@ -65,7 +53,7 @@ class FormInscription extends Component {
                 type="text"
                 id="firstname"
                 name="firstname"
-                value={firstname}
+                // value={firstname}
                 onChange={this.handleChange}
                 placeholder=" Prénom"
                 required
@@ -78,7 +66,7 @@ class FormInscription extends Component {
                 type="text"
                 id="phone"
                 name="phone"
-                value={phone}
+                // value={phone}
                 minLength="10"
                 maxLength="10"
                 onChange={this.handleChange}
@@ -91,7 +79,7 @@ class FormInscription extends Component {
                 type="text"
                 id="mail"
                 name="email"
-                value={email}
+                // value={mail}
                 onChange={this.handleChange}
                 placeholder=" Mail"
                 required
@@ -100,7 +88,10 @@ class FormInscription extends Component {
           </div>
           <div className="form-under-box">
           </div>
-          <input type="submit" value="Enregistrer" className="form-person-button" />
+          <input type="submit" value="Enregistrer" className="form-person-button"
+          // onChange={this.handleChange}
+          />
+
         </form>
       </div>
     );
