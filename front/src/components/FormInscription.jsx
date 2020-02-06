@@ -22,16 +22,22 @@ class FormInscription extends Component {
   handleSubmit(e) {
     const { firstname, lastname, phone, mail } = this.state;
     e.preventDefault();
-    axios.post('http://localhost:4000/wcs/student', {
-      firstname,
-      lastname,
-      phone,
-      mail
-    })
+    axios
+      .post('/wcs/students', {
+        firstname,
+        lastname,
+        phone,
+        mail
+      });
   }
 
   render() {
-
+    const {
+      lastname,
+      firstname,
+      phone,
+      mail
+    } = this.state;
     return (
       <div>
         <form onSubmit={this.handleSubmit} className="form-style">
@@ -42,7 +48,7 @@ class FormInscription extends Component {
                 type="text"
                 id="lastname"
                 name="lastname"
-                // value={lastname}
+                value={lastname}
                 onChange={this.handleChange}
                 placeholder=" Nom"
                 required
@@ -53,7 +59,7 @@ class FormInscription extends Component {
                 type="text"
                 id="firstname"
                 name="firstname"
-                // value={firstname}
+                value={firstname}
                 onChange={this.handleChange}
                 placeholder=" Prénom"
                 required
@@ -66,7 +72,7 @@ class FormInscription extends Component {
                 type="text"
                 id="phone"
                 name="phone"
-                // value={phone}
+                value={phone}
                 minLength="10"
                 maxLength="10"
                 onChange={this.handleChange}
@@ -78,8 +84,8 @@ class FormInscription extends Component {
               <input
                 type="text"
                 id="mail"
-                name="email"
-                // value={mail}
+                name="mail"
+                value={mail}
                 onChange={this.handleChange}
                 placeholder=" Mail"
                 required
@@ -89,9 +95,7 @@ class FormInscription extends Component {
           <div className="form-under-box">
           </div>
           <input type="submit" value="Enregistrer" className="form-person-button"
-          // onChange={this.handleChange}
           />
-
         </form>
       </div>
     );

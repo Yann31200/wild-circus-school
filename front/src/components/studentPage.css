@@ -1,0 +1,18 @@
+.student-list {
+  display: grid;
+  display: grid;
+  grid-template-columns: 23% 23% 15% 12% 12% 9%;
+  grid-template-rows: 6vh;
+  justify-content: space-around;
+  background-color: white;
+  justify-content: center;
+  margin: 10px 0.5vw 10px 0.5vw;
+  border-radius: 5px 15px 15px 5px;
+  align-items: center;
+}
+
+.student-page-title {
+  text-align: center;
+  margin: 3em;
+  margin-top: 10em;
+}

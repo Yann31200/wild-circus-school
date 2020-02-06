@@ -9,9 +9,33 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 
-app.post('/wcs/student', (req, res) => {
-  connection.query(`INSERT INTO student SET ?`, req.body, (err, results) => {
+app.get('/wcs/students', (req, res) => {
+  connection.query(`SELECT * FROM students`, (err, results) => {
     if (err) {
+      console.log(err)
+      return res.status(500).send("Erreur lecture de la liste");
+    } else {
+      res.json(results);
+    }
+  })
+});
+// get student + training correspondant
+
+app.get('/wcs/students', (req, res) => {
+  connection.query(`SELECT s.firstname, s.lastname, s.phone, s.mail, t.name FROM students AS s JOIN student_has_training AS st ON s.id = st.id_student JOIN training AS t ON t.id=st.id_training ORDER BY s.firstname`, (err, results) => {
+    if (err) {
+      console.log(err)
+      return res.status(500).send("Erreur lecture de la liste");
+    } else {
+      res.json(results);
+    }
+  })
+});
+
+app.post('/wcs/students', (req, res) => {
+  connection.query(`INSERT INTO students SET ?`, req.body, (err, results) => {
+    if (err) {
+      console.log(err)
       return res.status(500).send("Erreur à l'ajout d'un etudiant");
     }
     res.status(201).json({ message: 'created' });

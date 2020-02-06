@@ -1,6 +1,7 @@
 import React from 'react';
 import { Dropdown, Menu, Icon } from 'semantic-ui-react';
 import { NavLink } from 'react-router-dom';
+import './menuTopNav.css';
 
 const options = [
   { key: 1, text: <NavLink to="/">Accueil</NavLink>, value: 1 },
@@ -12,6 +13,7 @@ const options = [
 const MenuTopNav = () => (
   <Menu compact>
     <Dropdown
+      className="dropdown-menu"
       trigger={(
         <Icon
           name="bars"
